@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import lodash from 'lodash';
-
-const printStuff = () => {
-  return lodash.join(['a', 'b', 'c'], '~');
-}
 
 function App() {
   const [string, setString] = useState('String not set.');
+
+  const handleClick = async e => {
+    setString('Loading...')
+
+    const result = await import(/* webpackChunkName: "foobarbaz" */ 'lodash').then(lodash => {
+      return lodash.default.join(['a', 'b', 'c'], '~')
+    })
+
+    setString(result);
+  }
 
   return (
     <div className="App">
@@ -17,7 +22,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={ e => setString(printStuff()) }>Set the string!</button>
+        <button onClick={ handleClick }>Set the string!</button>
         <p>{string}</p>
         <a
           className="App-link"
