@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import lodash from 'lodash';
@@ -7,6 +8,8 @@ const printStuff = () => {
 }
 
 function App() {
+  const [string, setString] = useState('String not set.');
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,9 +17,8 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>
-          {printStuff()}
-        </p>
+        <button onClick={ e => setString(printStuff()) }>Set the string!</button>
+        <p>{string}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
