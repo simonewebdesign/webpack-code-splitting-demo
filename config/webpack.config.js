@@ -296,6 +296,14 @@ module.exports = function (webpackEnv) {
       splitChunks: {
         chunks: 'all',
         name: false,
+        cacheGroups: {
+          fubar: {
+            name: 'foobarbaz',
+            test: /lodash/,
+            enforce: true,
+            chunks: 'all',
+          }
+        }
       },
       // Keep the runtime chunk separated to enable long term caching
       // https://twitter.com/wSokra/status/969679223278505985
