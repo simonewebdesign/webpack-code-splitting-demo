@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import lodash from 'lodash';
+
+const printStuff = () => {
+  return lodash.join(['a', 'b', 'c'], '~');
+}
 
 function App() {
   return (
@@ -8,6 +13,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p>
+          {printStuff()}
         </p>
         <a
           className="App-link"
