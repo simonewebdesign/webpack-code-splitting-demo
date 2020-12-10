@@ -1,3 +1,16 @@
+# Webpack Code Splitting Example
+
+Just a demo repo showing how to achieve [code splitting] and [lazy loading] with Webpack.
+
+Check `src/App.js`: there is a button that, when clicked, will fetch lodash from the network (using Webpack's JSONP) and return a string.
+
+The point is to have a faster initial loading time, at the expense of a slower experience later (plus having to display some kind of loading spinner).
+
+[code splitting]: https://webpack.js.org/guides/code-splitting/
+[lazy loading]: https://webpack.js.org/guides/lazy-loading/
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
