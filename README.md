@@ -6,6 +6,8 @@ Check `src/App.js`: there is a button that, when clicked, will fetch lodash from
 
 The point is to have a faster initial loading time, at the expense of a slower experience later (plus having to display some kind of loading spinner).
 
+Note that Webpack's defaults are quite good and normally there should be no need to create chunks manually, but this really depends on how your dependency tree looks like.
+
 [code splitting]: https://webpack.js.org/guides/code-splitting/
 [lazy loading]: https://webpack.js.org/guides/lazy-loading/
 
