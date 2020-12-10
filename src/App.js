@@ -8,7 +8,7 @@ function App() {
   const handleClick = async e => {
     setString('Loading...')
 
-    const result = await import(/* webpackChunkName: "foobarbaz" */ 'lodash').then(lodash => {
+    const result = await import('lodash').then(lodash => {
       return lodash.default.join(['a', 'b', 'c'], '~')
     })
 
